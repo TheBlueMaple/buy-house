@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'GirlType';
+    src:url(./fonts/GirlType.ttf);
+}
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: 'GirlType';
+}
