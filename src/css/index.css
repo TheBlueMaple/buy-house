@@ -8,3 +8,99 @@
     list-style: none;
     font-family: 'GirlType';
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+}
+#root{
+    width:375px;
+    height:670px;
+}
+#root .container{
+    width:100%;
+    height:100%;
+    border:1px solid #ccc;
+}
+#root .entity,#root .cover{
+    width:100%;
+    height:100%;
+}
+.start_page{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../img/startpage2.png');
+}
+.start_page img{
+    max-width:100%;
+}
+.header{
+    height:10%;
+    background-color: rgb(0, 169, 157);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header span{
+    display: block;
+    color:white;
+    font-size:1.5em;
+}
+.header span:last-of-type{
+    margin-right:2em;
+}
+.buy_and_sell{
+    background-image: url(../img/bg_mandw.png);
+    height:40%;
+    background-size:cover;
+}
+.base_info{
+    margin-top:-4px;
+    background-image: url(../img/bg_status2.png),url(../img/bg_status1.png);
+    background-position:left bottom,left top;
+    background-repeat: no-repeat;
+    background-size:100%;
+    height:12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.base_info p{
+    display: flex;
+    justify-content: space-between;
+}
+.base_info p span{
+    color:white;
+    font-size:1.2em;
+}
+.base_info p span:first-of-type{
+    margin-left:1em;
+}
+.base_info p span:last-of-type{
+    margin-right:2em;
+}
+.controls{
+    padding-top:30%;
+    width:100%;
+    height:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.controls p{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.controls p img{
+    width:25%;
+    cursor: pointer;
+}
+.controls p:nth-of-type(2) img{
+    width:20%;
+}
