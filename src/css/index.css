@@ -16,6 +16,7 @@ body{
     height:100vh;
 }
 #root{
+    position: relative;
     width:375px;
     height:670px;
 }
@@ -27,6 +28,12 @@ body{
 #root .entity,#root .cover{
     width:100%;
     height:100%;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+#root .cover{
+    z-index: 10;
 }
 .start_page{
     height:100%;
@@ -58,6 +65,41 @@ body{
     background-image: url(../img/bg_mandw.png);
     height:40%;
     background-size:cover;
+    display: flex;
+}
+.buy{
+    width:38%;
+    padding:0px 2%;
+}
+.sell{
+    width:54%;
+    padding:0px 2%;
+}
+.buy_and_sell>div>p{
+    margin-top:5px;
+}
+.buy_and_sell>div>p:first-of-type{
+    margin-top:30px;
+}
+.buy_and_sell p{
+    display: flex;
+    justify-content: space-around;
+}
+.buy_and_sell p span{
+    color:white;
+}
+.buy_and_sell>div:first-of-type>p:first-of-type>span{
+    background-color:rgb(116, 164, 2);
+    padding:2px;
+    border-radius: 1px;
+}
+.buy_and_sell>div:last-of-type>p:first-of-type>span{
+    background-color:rgb(193, 64, 0);
+    padding:2px;
+    border-radius: 1px;
+}
+.buy_and_sell>div:last-of-type>p:first-of-type>span:last-of-type{
+    padding:2px 14px;
 }
 .base_info{
     margin-top:-4px;

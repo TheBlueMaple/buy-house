@@ -5,14 +5,19 @@ export default class Game extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-
+            housePrice:0,
+            weeks :0,
+            cash : 0,
+            health:100,
+            deposit:0,
+            fame:100
         }
     }
     render(){
         return(
             <div className="container">
-                {/* <Cover /> */}
-                <Entity />
+                <Cover />
+                <Entity {...this.state} />
             </div>
         )
     }
