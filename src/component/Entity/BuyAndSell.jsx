@@ -1,25 +1,31 @@
 import React from 'react';
 export default class BuyAndSell extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            free:100,
-            limit:100
-        }
-    }
     render(){
         return (
             <div className="buy_and_sell">
                 <div className="buy">
                     <p><span>市场</span></p>
                     <p><span>货物</span><span>价格</span></p>
-                    {(this.props.isShowMarket && this.props.isPlay) && <ul className="current_market">
+                    <ul className="current_market">
                         {this.props.currentMarket.map((value,key)=><li key={key}>{value.element}<span>{value.price}</span></li>)}
-                    </ul>}
+                    </ul>
                 </div>
                 <div className="sell">
-                    <p><span>出租屋</span><span>{this.state.free}/{this.state.limit}</span></p>
+                    <p><span>出租屋</span><span>{this.props.repertoryStatus.free}/{this.props.repertoryStatus.limit}</span></p>
                     <p><span>货物</span><span>价格</span><span>数量</span></p>
+                    <ul className="repertory">
+                        {this.props.repertory.map((value,key)=>{
+                            if(value.count > 0)
+                                return(
+                                    <li key={key}>{value.element}
+                                        <span>{value.buyingPrice}</span>
+                                        <span>{value.count}</span>
+                                    </li>);
+                            else
+                                return null;
+                                })
+                        }
+                    </ul>
                 </div>
             </div>
         )

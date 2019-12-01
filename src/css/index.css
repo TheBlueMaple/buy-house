@@ -7,6 +7,7 @@
     padding:0;
     list-style: none;
     font-family: 'GirlType';
+    user-select: none;
 }
 body{
     display: flex;
@@ -352,10 +353,36 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.current_market li>span{
+.current_market li{
     margin-right:15px;
 }
 .current_market img{
+    width:5em;
+    cursor: pointer;
+}
+.repertory{
+    padding-top:3%;
+    width:100%;
+    height:67%;
+    width:90%;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+.repertory::-webkit-scrollbar{
+    display: none;
+}
+.repertory li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.repertory li span:first-of-type{
+    margin-right:30px;
+}
+.repertory li span:last-of-type{
+    margin-right:11px;
+}
+.repertory img{
     width:5em;
 }
 .base_info{

@@ -30,6 +30,60 @@ export default class Game extends React.Component{
             deposit:0,
             fame:100,
             currentMarket:[],
+            repertory:[
+                {
+                    name:"zjyd",
+                    element:<img src={Btn_zjyd_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'slrj',
+                    element:<img src={Btn_slrj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'dgy',
+                    element:<img src={Btn_dgy_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'jknf',
+                    element:<img src={Btn_jknf_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'fdmj',
+                    element:<img src={Btn_fdmj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'hjss',
+                    element:<img src={Btn_hjss_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'spsj',
+                    element:<img src={Btn_spsj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'gcqc',
+                    element:<img src={Btn_gcqc_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+            ],
+            repertoryStatus:{
+                free:100,
+                limit:100
+            },
             isShowCover:true,
             isShowHelp:false,
             isShowStartPage:true,
@@ -46,7 +100,7 @@ export default class Game extends React.Component{
                 isShowStartPage:false
             });
             this.hideCover();
-        },3000);
+        },2000);
     }
     hideStartPage = ()=>{
         this.setState({
@@ -126,8 +180,63 @@ export default class Game extends React.Component{
             deposit:0,
             fame:100,
             currentMarket:[],
-            isShowCover:false,
+            repertory:[
+                {
+                    name:"zjyd",
+                    element:<img src={Btn_zjyd_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'slrj',
+                    element:<img src={Btn_slrj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'dgy',
+                    element:<img src={Btn_dgy_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'jknf',
+                    element:<img src={Btn_jknf_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'fdmj',
+                    element:<img src={Btn_fdmj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'hjss',
+                    element:<img src={Btn_hjss_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'spsj',
+                    element:<img src={Btn_spsj_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+                {
+                    name:'gcqc',
+                    element:<img src={Btn_gcqc_w} />,
+                    count:0,
+                    buyingPrice:0
+                },
+            ],
+            repertoryStatus:{
+                free:100,
+                limit:100
+            },
+            isShowCover:true,
             isShowHelp:false,
+            isShowStartPage:true,
             isPlay:false,
             isShowStartCash:false,
             isShowMarket:false,

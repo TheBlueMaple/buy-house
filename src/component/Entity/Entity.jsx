@@ -11,8 +11,10 @@ export default class Entity extends React.Component{
                 housePrice ={this.props.housePrice} 
                 weeks ={this.props.weeks} />
             <BuyAndSell 
+                repertoryStatus={this.props.repertoryStatus}
                 isShowMarket={this.props.isShowMarket} 
                 currentMarket={this.props.currentMarket}
+                repertory={this.props.repertory}
                 isPlay={this.props.isPlay} />
             <BaseInfo 
                 cash={this.props.cash} 
