@@ -8,15 +8,16 @@ import Button_slb from '../../img/btn_slb.png';
 import Button_zj from '../../img/btn_zj.png';
 import Button_bz from '../../img/btn_bz.png';
 import Button_ksyx from '../../img/btn_ksyx.png';
+import Button_jsyx from '../../img/btn_jsyx.png';
 import Button_lcb from '../../img/btn_lcb.png';
 export default class Controls extends React.Component{
     render(){
         return(
             <div className="controls">
                 <p>
-                    <img src={Button_essc}/>
-                    <img src={Button_nmsc}/>
-                    <img src={Button_pfsc}/>
+                    <img src={Button_essc} onClick={this.props.refreshMarket} />
+                    <img src={Button_nmsc} onClick={this.props.refreshMarket} />
+                    <img src={Button_pfsc} onClick={this.props.refreshMarket} />
                 </p>
                 <p>
                     <img src={Button_yh}/>
@@ -25,8 +26,8 @@ export default class Controls extends React.Component{
                     <img src={Button_zj}/>
                 </p>
                 <p>
-                    <img src={Button_bz}/>
-                    <img src={Button_ksyx}/>
+                    <img src={Button_bz} onClick={()=>{this.props.showCover();this.props.showHelp();}} />
+                    {this.props.isPlay ? <img src={Button_jsyx} onClick={this.props.showAskGameOver} /> : <img src={Button_ksyx} onClick={this.props.start} />}
                     <img src={Button_lcb}/>
                 </p>
             </div>

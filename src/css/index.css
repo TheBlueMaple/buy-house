@@ -46,6 +46,248 @@ body{
 .start_page img{
     max-width:100%;
 }
+.help{
+    width:100%;
+    height:100%;
+}
+.help>div{
+    width:100%;
+    height:100%;
+}
+.help>div>p{
+    text-indent: 2em;
+    color:white;
+    line-height:1.5em;
+}
+.help>p{
+    width:86%;
+    position: absolute;
+    bottom: 0px;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding:6.5% 5%;
+}
+.help_content_1{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_1.png);
+
+}
+.help_content_2{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_2.png);
+
+}
+.help_content_3{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_3.png);
+
+}
+.help_content_4{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_4.png);
+
+}
+.help_content_5{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_5.png);
+
+}
+.help_content_6{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_6.png);
+
+}
+.help_content_7{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_7.png);
+
+}
+.help_content_8{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_8.png);
+
+}
+.help_content_9{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_9.png);
+
+}
+.help_content_10{
+    display: block;
+    width:100%;
+    height:100%;
+    background-size: 100% 100%;
+    background-image: url(../img/bg_help_10.png);
+
+}
+.help_content_1>p{
+    padding-left:2em;
+    padding-right:2em;
+}
+.help_content_1>p:first-of-type{
+    padding-top:80px;
+}
+.help_content_2>p{
+    width:50%;
+    padding-left:45%;
+}
+.help_content_2>p:first-of-type{
+    padding-top:150px;
+}
+.help_content_3>p{
+    width:40%;
+    padding-left:0.5em;
+}
+.help_content_3>p:first-of-type{
+    padding-top:150px;
+}
+.help_content_4>p{
+    width:50%;
+    padding-left:48%;
+}
+.help_content_4>p:first-of-type{
+    padding-top:130px;
+}
+.help_content_5>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_5>p:first-of-type{
+    padding-top:200px;
+}
+.help_content_6>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_6>p:first-of-type{
+    padding-top:450px;
+}
+.help_content_7>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_7>p:first-of-type{
+    padding-top:450px;
+}
+.help_content_8>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_8>p:first-of-type{
+    padding-top:450px;
+}
+.help_content_9>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_9>p:first-of-type{
+    padding-top:450px;
+}
+.help_content_10>p{
+    width:90%;
+    padding-left:5%;
+    padding-right:5%;
+}
+.help_content_10>p:first-of-type{
+    padding-top:450px;
+}
+
+.help>p>span{
+    cursor: pointer;
+}
+.start_cash{
+    width:90%;
+
+    margin-left:5%;
+    height:40%;
+    position: absolute;
+    left:0px;
+    bottom:-20px;
+    background-image: url(../img/bg_ksyx.png);
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+.start_cash>span:first-of-type{
+    position: absolute;
+    top:34px;
+    left:175px;
+}
+.start_cash>p:first-of-type{
+    position: absolute;
+    top:80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+}
+.start_cash>p:first-of-type>img:first-of-type{
+    padding-left:3em;
+}
+.start_cash>p:first-of-type>img:last-of-type{
+    padding-right:3em;
+}
+.start_cash>p:last-of-type{
+    position: absolute;
+    top:170px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+}
+.start_cash img{
+    width:3em;
+    cursor: pointer;
+}
+.ask_game_over{
+    position: absolute;
+    bottom:95px;
+    left:5%;
+    height:21%;
+    width:90%;
+    background-image: url(../img/bg_tcyx.png);   
+    background-size:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom:4%;
+}
+.ask_game_over img{
+    width:3em;
+    height:1.8em;
+    cursor: pointer;
+}
 .header{
     height:10%;
     background-color: rgb(0, 169, 157);
@@ -100,6 +342,21 @@ body{
 }
 .buy_and_sell>div:last-of-type>p:first-of-type>span:last-of-type{
     padding:2px 14px;
+}
+.current_market{
+    width:100%;
+    margin-top:10px;
+}
+.current_market li{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.current_market li>span{
+    margin-right:15px;
+}
+.current_market img{
+    width:5em;
 }
 .base_info{
     margin-top:-4px;

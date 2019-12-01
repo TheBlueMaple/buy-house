@@ -1,23 +1,26 @@
 import React from 'react';
 import StartPage from './StartPage';
+import Help from './Help';
+import StartCash from './StartCash';
+import AskGameOver from './AskGameOver';
 export default class Cover extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            isShowStartPage:true
-        }
-    }
-    componentDidMount(){
-        setTimeout(()=>{
-            this.setState({
-                isShowStartPage:false
-            })
-        },3000);
-    }
     render(){
         return (
         <div className="cover">
-            {this.state.isShowStartPage && <StartPage />}
+            {this.props.isShowStartPage && <StartPage />}
+            {this.props.isShowHelp && <Help 
+                hideHelp={this.props.hideHelp} 
+                hideCover={this.props.hideCover} />}
+            {this.props.isShowStartCash && <StartCash 
+                startCash={this.props.startCash} 
+                coupon={this.props.coupon} 
+                decCash={this.props.decCash} 
+                addCash={this.props.addCash} 
+                startGame={this.props.startGame} 
+                cancelGame={this.props.cancelGame} />}
+            {this.props.isShowAskGameOver && <AskGameOver 
+                gameOver={this.props.gameOver} 
+                hideAskGameOver={this.props.hideAskGameOver} />}
         </div>
         )
     }
