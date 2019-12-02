@@ -17,7 +17,7 @@ export default class BuyAndSell extends React.Component{
                         {this.props.repertory.map((value,key)=>{
                             if(value.count > 0)
                                 return(
-                                    <li key={key}>{value.element}
+                                    <li key={key} onClick={()=>{this.props.sellCommodity(value)}}>{value.element}
                                         <span>{value.buyingPrice}</span>
                                         <span>{value.count}</span>
                                     </li>);

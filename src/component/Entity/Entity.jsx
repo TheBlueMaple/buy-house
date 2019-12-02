@@ -17,6 +17,7 @@ export default class Entity extends React.Component{
                 repertory={this.props.repertory}
                 isPlay={this.props.isPlay}
                 buyCommodity={this.props.buyCommodity}
+                sellCommodity={this.props.sellCommodity}
                 cash={this.props.cash} />
             <BaseInfo 
                 cash={this.props.cash} 
@@ -26,7 +27,7 @@ export default class Entity extends React.Component{
             <Controls 
                 showHelp={this.props.showHelp} 
                 showCover={this.props.showCover} 
-                start={this.props.start} 
+                start={this.props.start}
                 isPlay={this.props.isPlay} 
                 refreshMarket={this.props.refreshMarket}
                 showAskGameOver={this.props.showAskGameOver}  />

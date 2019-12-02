@@ -4,6 +4,7 @@ import Help from './Help';
 import StartCash from './StartCash';
 import AskGameOver from './AskGameOver';
 import BuyAsk from './BuyAsk';
+import SellAsk from './SellAsk';
 export default class Cover extends React.Component{
     render(){
         return (
@@ -29,6 +30,13 @@ export default class Cover extends React.Component{
                 inputNumber={this.props.inputNumber}
                 changeInputNumber={this.props.changeInputNumber}
                 buy={this.props.buy} />}
+            {this.props.isShowSellAsk && <SellAsk 
+                element={this.props.currentSellAsk.element} 
+                max={this.props.currentSellAsk.max}
+                surplus={this.props.currentSellAsk.surplus}
+                outNumber={this.props.outNumber}
+                changeOutNumber={this.props.changeOutNumber}
+                sell={this.props.sell} />}
         </div>
         )
     }
