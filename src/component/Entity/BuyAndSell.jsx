@@ -7,7 +7,7 @@ export default class BuyAndSell extends React.Component{
                     <p><span>市场</span></p>
                     <p><span>货物</span><span>价格</span></p>
                     <ul className="current_market">
-                        {this.props.currentMarket.map((value,key)=><li key={key}>{value.element}<span>{value.price}</span></li>)}
+                        {this.props.currentMarket.map((value,key)=><li key={key} onClick={()=>{this.props.buyCommodity(value,this.props.cash)}}>{value.element}<span>{value.price}</span></li>)}
                     </ul>
                 </div>
                 <div className="sell">

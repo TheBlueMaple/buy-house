@@ -29,7 +29,11 @@ export default class Game extends React.Component{
             health:100,
             deposit:0,
             fame:100,
+            inputNumber:0,
             currentMarket:[],
+            currentBuyAsk:{
+                max:0
+            },
             repertory:[
                 {
                     name:"zjyd",
@@ -90,7 +94,8 @@ export default class Game extends React.Component{
             isPlay:false,
             isShowStartCash:false,
             isShowMarket:false,
-            isShowAskGameOver:false
+            isShowAskGameOver:false,
+            isShowBuyAsk:false
         }
     }
     // 引导页控制
@@ -179,7 +184,11 @@ export default class Game extends React.Component{
             health:100,
             deposit:0,
             fame:100,
+            inputNumber:0,
             currentMarket:[],
+            currentBuyAsk:{
+                max:0
+            },
             repertory:[
                 {
                     name:"zjyd",
@@ -240,7 +249,8 @@ export default class Game extends React.Component{
             isPlay:false,
             isShowStartCash:false,
             isShowMarket:false,
-            isShowAskGameOver:false
+            isShowAskGameOver:false,
+            isShowBuyAsk:false
         })
     }
     cancelGame = ()=>{
@@ -358,6 +368,62 @@ export default class Game extends React.Component{
             })
         })
     }
+    // 控制买卖
+    buyCommodity = (commodity,balance)=>{
+        let name = commodity.name;
+        let price = commodity.price;
+        let element = commodity.element;
+        let max = Math.floor(balance/price);
+        if(max > this.state.repertoryStatus.free)
+            max = this.state.repertoryStatus.free;
+        this.setState({
+            isShowCover:true,
+            isShowBuyAsk:true,
+            currentBuyAsk:{
+                element:element,
+                max:max,
+                name:name,
+                price:price
+            },
+            inputNumber:max
+        })
+    }
+    changeInputNumber = (event) => {
+        let value  = event.target.value;
+        if(value > this.state.currentBuyAsk.max)
+            value = this.state.currentBuyAsk.max;
+        else if(value < 0)
+            value = 0;
+        value = Math.floor(value);
+        this.setState({
+            inputNumber:value
+        });
+    }
+    buy = ()=>{
+        let repertory = this.state.repertory;
+        let name = this.state.currentBuyAsk.name;
+        let price = this.state.currentBuyAsk.price;
+        let input = this.state.inputNumber;
+        let repertoryStatus = this.state.repertoryStatus;
+        let cash  = this.state.cash;
+        for(let i of repertory){
+            if(i.name == name){
+                repertoryStatus.free = repertoryStatus.free - input;
+                cash = cash - price*input;
+                i.buyingPrice = ((i.buyingPrice*i.count)+(price*input))/(i.count+input);
+                i.buyingPrice = Math.floor(i.buyingPrice);
+                i.count = i.count+input;
+                this.setState({
+                    isShowCover:false,
+                    isShowBuyAsk:false,
+                    repertory:repertory,
+                    repertoryStatus:repertoryStatus,
+                    cash:cash
+                });
+                return;
+            }
+        }
+    }
     render(){
         return(
             <div className="container">
@@ -371,7 +437,9 @@ export default class Game extends React.Component{
                     startGame={this.startGame} 
                     cancelGame={this.cancelGame}
                     hideAskGameOver={this.hideAskGameOver}
-                    gameOver={this.gameOver} />}
+                    gameOver={this.gameOver}
+                    changeInputNumber={this.changeInputNumber}
+                    buy={this.buy} />}
 
                 <Entity 
                     {...this.state} 
@@ -379,7 +447,8 @@ export default class Game extends React.Component{
                     showHelp={this.showHelp} 
                     start={this.start} 
                     showAskGameOver={this.showAskGameOver}
-                    refreshMarket={this.refreshMarket} />
+                    refreshMarket={this.refreshMarket}
+                    buyCommodity={this.buyCommodity} />
             </div>
         )
     }

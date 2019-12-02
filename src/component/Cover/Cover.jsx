@@ -3,6 +3,7 @@ import StartPage from './StartPage';
 import Help from './Help';
 import StartCash from './StartCash';
 import AskGameOver from './AskGameOver';
+import BuyAsk from './BuyAsk';
 export default class Cover extends React.Component{
     render(){
         return (
@@ -21,6 +22,13 @@ export default class Cover extends React.Component{
             {this.props.isShowAskGameOver && <AskGameOver 
                 gameOver={this.props.gameOver} 
                 hideAskGameOver={this.props.hideAskGameOver} />}
+            {this.props.isShowBuyAsk && <BuyAsk 
+                element={this.props.currentBuyAsk.element} 
+                max={this.props.currentBuyAsk.max}
+                name={this.props.currentBuyAsk.name}
+                inputNumber={this.props.inputNumber}
+                changeInputNumber={this.props.changeInputNumber}
+                buy={this.props.buy} />}
         </div>
         )
     }
