@@ -488,27 +488,54 @@ export default class Game extends React.Component{
         }
     }
     sell = ()=>{
+        // 出租屋货物
         let repertory = this.state.repertory;
-        let name = this.state.currentBuyAsk.name;
-        let price = this.state.currentBuyAsk.price;
-        let input = this.state.inputNumber;
+        // 售卖物品名称
+        let name = this.state.currentSellAsk.name;
+        // 盈亏
+        let surplus = this.state.currentSellAsk.surplus;
+        // 售卖数量
+        let out = this.state.outNumber;
+        // 仓库状态
         let repertoryStatus = this.state.repertoryStatus;
+        // 现金
         let cash  = this.state.cash;
         for(let i of repertory){
-            if(i.name == name){
-                repertoryStatus.free = repertoryStatus.free - input;
-                cash = cash - price*input;
-                i.buyingPrice = ((i.buyingPrice*i.count)+(price*input))/(i.count+input);
-                i.buyingPrice = Math.floor(i.buyingPrice);
-                i.count = i.count+input;
+            /* 当我们卖出时需要重新计算:
+                1. 仓库状态
+                2. 仓库中相应的商品状态
+                3. 现金
+
+            */
+            if(i.name === name){
+                // 售卖价格
+                let buyingPrice = i.buyingPrice;
+                repertoryStatus.free = repertoryStatus.free + out;
+                i.count  = i.count - out;
+                console.log(cash);
+                cash = cash + buyingPrice*out+surplus;
+                console.log(cash,buyingPrice,surplus);
+                if(i.count === 0) i.buyingPrice = 0;
                 this.setState({
                     isShowCover:false,
-                    isShowBuyAsk:false,
+                    isShowSellAsk:false,
                     repertory:repertory,
                     repertoryStatus:repertoryStatus,
                     cash:cash
                 });
+                if(name === 'dgy' || name === 'spsj'){
+                    let fame = this.state.fame;
+                    fame = fame-1;
+                    this.setState({
+                        fame:fame
+                    })
+                }
                 return;
+            }else{
+                this.setState({
+                    isShowCover:false,
+                    isShowSellAsk:false
+                })
             }
         }
     }
@@ -528,7 +555,7 @@ export default class Game extends React.Component{
                     gameOver={this.gameOver}
                     changeInputNumber={this.changeInputNumber}
                     changeOutNumber={this.changeOutNumber}
-                    buy={this.sell}
+                    sell={this.sell}
                     buy={this.buy} />}
 
                 <Entity 
