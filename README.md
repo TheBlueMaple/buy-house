@@ -1,7 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo address
-[Click to view](http://buyhouse.bluemaple.top)
 
 ## Available Scripts
 
